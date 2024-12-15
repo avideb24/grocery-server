@@ -1,21 +1,16 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "./index.js",
-      "use": "@vercel/node"
-    }
+      {
+          "src": "./index.js",
+          "use": "@vercel/node"
+      }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.js",
-      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-    }
-  ],
-  "functions": {
-    "index.js": {
-      "includeFiles": "prisma/schema.prisma, prisma/migrations/**, node_modules/.prisma/**"
-    }
-  }
+      {
+          "src": "/(.*)",
+          "dest": "/",
+          "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+      }
+  ]
 }
