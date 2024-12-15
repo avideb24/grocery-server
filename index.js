@@ -1,13 +1,20 @@
+// // index.js
 // const app = require("./app");
-// const { PORT } = require("./src/configs/config");
 
-// app.listen(PORT, () => {
-//   console.log(`Server is running on http://localhost:${PORT}`);
-// });
+// // Export the app for Vercel to handle the routing
+// module.exports = app;
 
-// index.js
+
+
 const app = require("./app");
+const { PORT } = require("./src/configs/config");
 
-// Export the app for Vercel to handle the routing
-module.exports = app;
+app.get('/', async(req, res) => {
+    res.send('server running')
+})
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+
 
